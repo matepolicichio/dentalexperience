@@ -1,0 +1,47 @@
+{% extends 'base/base.html' %}
+{% block title %}Crear Nueva Promoción{% endblock %}
+
+{% block body_class %}
+class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu"
+{% endblock %}
+
+{% block main %}
+
+<main id="main">
+
+    <!-- Blog Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-start text-start">
+                    <div class="col-lg-8">
+                        <h1>Agregar Promoción...</h1>
+                        <p class="mb-0">Complete los siguientes datos para agregar una promoción...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <section class="blog">
+        <div class='container'>
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="form-group">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form.media }}
+                            {{ form.as_p }}
+                            <button class="btn btn-secondary">Agregar</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+{% endblock %}

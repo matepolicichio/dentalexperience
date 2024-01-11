@@ -1,0 +1,55 @@
+{% load static %}
+<!-- Features Section - Home Page -->
+
+<section id="{{ section_selection.section.html_id }}" class="features">
+
+  <!--  Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Distintivos</h2>
+    <p>Explora nuestros servicios destacados que representan lo mejor de nuestra clínica. Desde restauraciones
+      avanzadas hasta alineadores invisibles, conoce cómo estamos redefiniendo el cuidado dental.
+    </p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-4 align-items-center features-item">
+      <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+        <h3>Restauraciones Dentales Avanzadas</h3>
+        <p>
+          Descubre nuestra experiencia en restaurar dientes dañados con materiales de primera calidad, devolviendo
+          la funcionalidad y estética a tu sonrisa.
+        </p>
+        <a href="{% url 'base:index' %}#contact" class="btn btn-get-started">Comenzar</a>
+      </div>
+      <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+        <div class="image-stack">
+          <img src="{% static 'base/img/destacados/destacados1.jpg' %}" alt="" class="stack-front">
+          <img src="{% static 'base/img/destacados/destacados2.jpg' %}" alt="" class="stack-back">
+        </div>
+      </div>
+    </div><!-- Features Item -->
+
+    <div class="row gy-4 align-items-stretch justify-content-between features-item ">
+      <div class="col-lg-6 d-flex align-items-center features-img-bg" data-aos="zoom-out">
+        <img src="{% static 'base/img/destacados/destacados3.jpg' %}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-5 d-flex justify-content-center flex-column" data-aos="fade-up">
+        <h3>Alineadores Invisibles para Sonrisas Perfectas</h3>
+        <p>Experimenta la transformación con alineadores transparentes que enderezan suavemente tus dientes,
+          logrando una sonrisa recta sin preocupaciones estéticas.</p>
+        <!-- <ul>
+                <li><i class="bi bi-check"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+                <li><i class="bi bi-check"></i><span> Duis aute irure dolor in reprehenderit in voluptate velit.</span>
+                </li>
+                <li><i class="bi bi-check"></i> <span>Facilis ut et voluptatem aperiam. Autem soluta ad fugiat</span>.
+                </li>
+              </ul> -->
+        <a href="{% url 'base:index' %}#contact" class="btn btn-get-started align-self-start">Comenzar</a>
+      </div>
+    </div><!-- Features Item -->
+
+  </div>
+
+</section>
+<!-- End Features Section -->

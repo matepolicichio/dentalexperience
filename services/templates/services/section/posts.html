@@ -1,0 +1,63 @@
+<section id="{{ section_selection.section.html_id }}" class="blog">
+
+    <div class="container section-title" data-aos="fade-up">
+        {% if service_page_content %}
+        <a href="{% url 'services:home' %}"><h2>{{ service_page_content.name }}</h2></a>
+        <p>{{ service_page_content.description }}</p>
+        {% endif %}
+    </div>
+
+    {% if user.is_authenticated and user.is_staff %}
+    <div class="container">
+        <div class="d-flex justify-content-end align-items-center">
+            <a href="{% url 'services:add_post' %}"><i class="bi bi-plus-square-fill" style="font-size: 2em"></i></a>
+        </div>    
+    </div>
+    {% endif %}
+
+    {% if service_posts.all %}
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 posts-list">
+
+            {% for post in service_posts %}
+            <div class="card bx col-lg-6 align-items-center justify-content-center p-3">
+                <div class="row col-lg-12 g-0 align-items-center justify-content-center">
+                    <div class="col-lg-4">
+                        {% if post.header_image %}
+                        <a href="{% url 'services:article-detail' post.pk %}">
+                            <img src="{{ post.header_image.url }}" alt="..." class="img-fluid rounded-start">
+                        </a>
+                        {% endif %}
+                    </div>
+
+
+                    <div class="col-lg-8">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-end">
+                            
+                                {% if user.is_authenticated and user.is_staff %}
+                                    <div>
+                                        <small>
+                                        <a href="{% url 'services:update_post' post.pk %}"><i class="bi bi-pencil"></i></a>
+                                        <a href="{% url 'services:delete_post' post.pk %}"><i class="bi bi-trash"></i></a>
+                                        </small>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <h2 class="title">
+                                <a href="{% url 'services:article-detail' post.pk %}">{{ post.title }}</a>
+                            </h2>
+
+                            <p class="description">{{ post.snippet }}</p>
+                            <!-- <p class="post-category">{{ post.category }}</p>                        
+                            <p class="description"><small>{{ post.post_date }}</small></p> -->
+                        </div>
+                    </div>                   
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endif %}
+</section>

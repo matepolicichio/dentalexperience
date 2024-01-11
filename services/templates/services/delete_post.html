@@ -1,0 +1,54 @@
+{% extends 'base/base.html' %}
+{% block title %}Remover Promoción{% endblock %}
+
+{% block body_class %}
+class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu"
+{% endblock %}
+
+{% block main %}
+
+<main id="main">
+
+    <!-- Blog Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-start text-start">
+                    <div class="col-lg-8">
+                        <h1>Remover promoción...</h1>
+                        <p class="mb-0"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <section class="blog">
+        <div class='container'>
+            <div class="row">
+                <div class="col-lg-8">
+                    {% if user.is_authenticated and user.id == post.author.id %}
+
+                    <h3>Remover: {{ post.title }}</h3>
+                    <div class="form-group">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <strong>¿Está seguro de que desea eliminar esta publicación?</strong>
+                            <br>
+                            <br>
+                            <button class=" btn btn-secondary">Remover</button>
+                            <a href="{% url 'services:home' %}" class="btn btn-secondary">Cancelar</a>
+                        </form>
+                    </div>
+                    {% else %}
+                    <p>Por favor, acceder al sistema para actualizar la promoción</p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+{% endblock %}

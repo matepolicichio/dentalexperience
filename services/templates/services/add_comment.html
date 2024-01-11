@@ -1,0 +1,46 @@
+{% extends 'base/base.html' %}
+{% block title %}Nuevo Comentario{% endblock %}
+
+{% block body_class %}
+class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu"
+{% endblock %}
+
+{% block main %}
+
+<main id="main">
+
+    <!-- Blog Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1>Nuevo Comentario...</h1>
+                        <p class="mb-0">Complete los siguientes datos para agregar una comentario...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    <section class="blog">
+        <div class='container'>
+            <div class="row">
+                <div class="col-lg-8">
+
+                    <div class="form-group">
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button class="btn btn-secondary">Add Comment</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+{% endblock %}

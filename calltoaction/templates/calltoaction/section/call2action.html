@@ -1,0 +1,30 @@
+{% load static %}
+
+<!-- Call-to-action Section - Home Page -->
+{% if calltoaction %}
+<section id="{{ section_selection.section.html_id }}" class="call-to-action">
+
+  {% if calltoaction.background_image %}
+  <img src="{{ calltoaction.background_image.url }}" alt="...">
+  {% else %}
+  <img src="{% static 'base/img/call2action.jpg' %}" alt="">
+  {% endif %}
+
+  <div class="container">
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-xl-10">
+        <div class="text-center">
+          <h3>{{ calltoaction.title }}</h3>
+          <p>{{ calltoaction.description }}</p>
+            <a href="https://api.whatsapp.com/send?phone={{ calltoaction.whatsapp_number }}&text={{ calltoaction.whatsapp_message }}"
+              class="cta-btn" target="_blank"><i class="bi bi-whatsapp"></i> {{ calltoaction.btn_text }}</a>
+            <!-- <a class="cta-btn" href="{% url 'base:index' %}#contact">Agenda tu cita!</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+{% endif %}
+
+<!-- End Call-to-action Section -->

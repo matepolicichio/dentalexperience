@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% block title %}{{ service.name }}{% endblock %}
+
+{% block body_class %}
+class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu"
+{% endblock %}
+
+{% block main %}
+
+<main id="main">
+
+<br><br><br>
+{% if sections %}
+    {% for section_selection in sections %}
+        {% include section_selection.section.section_path %}
+    {% endfor %}
+{% endif %}
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+<section id="{{ section_selection.section.html_id }}" class="blog">
+    <div class="container section-title" data-aos="fade-up">
+        {% if promo_page_content %}
+        <a href="{% url 'promociones:home' %}"><h2>{{ promo_page_content.name }}</h2></a>
+        <p>{{ promo_page_content.description }}</p>
+        {% endif %}
+    </div>
+
+    {% if user.is_authenticated and user.is_staff %}
+    <div class="container">
+        <div class="d-flex justify-content-end align-items-center">
+            <a href="{% url 'promociones:add_post' %}"><i class="bi bi-plus-square-fill" style="font-size: 2em"></i></a>
+        </div>    
+    </div>
+    {% endif %}
+
+    {% if promo_posts.all %}
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 posts-list">
+
+            {% for post in promo_posts %}
+            <div class="col-xl-4 col-md-6">
+                <article class="article">
+
+
+                    <div class="post-img">
+                        {% if post.header_image %}
+                        <a href="{% url 'promociones:article-detail' post.pk %}">
+                            <img src="{{ post.header_image.url }}" alt="..." class="img-fluid">
+                        </a>
+                        {% endif %}
+                    </div>
+                    
+
+                    <div class="d-flex align-items-center justify-content-between">
+
+                        <p class="post-category">{{ post.category }}</p>
+                        {% if user.is_authenticated and user.is_staff %}
+                        <div>
+                            <small>
+                                <a href="{% url 'promociones:update_post' post.pk %}"><i class="bi bi-pencil"></i></a>
+                                <a href="{% url 'promociones:delete_post' post.pk %}"><i class="bi bi-trash"></i></a>
+                            </small>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <h2 class="title">
+                        <a href="{% url 'promociones:article-detail' post.pk %}">{{ post.title }}</a>
+                    </h2>
+
+                    <p class="post-category">{{ post.snippet }}</p>
+
+                    <div class="d-flex align-items-center justify-content-start">
+
+                        {% if post.author.profile and post.author.profile.profile_pic %}
+                        <img src="{{ post.author.profile.profile_pic.url }}" alt="..."
+                            class="img-fluid post-author-img flex-shrink-0">
+                        {% else %}
+                        <i class="bi bi-person" style="font-size: 2rem; margin-right: 10px; color: gray;"></i>
+                        {% endif %}
+
+                        <div class="post-meta">
+                            <p class="post-author">{{ post.author.first_name }} {{ post.author.last_name }}</p>
+                            <p class="post-date">{{ post.post_date }}</p>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+    {% endif %}
+</section>

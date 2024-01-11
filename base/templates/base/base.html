@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% block head %}
+    {% include 'base/head.html' %}
+    <title>{% block title %}Dental Experience Cancun{% endblock %}</title>
+{% endblock %}
+
+<body {% block body_class %}class="index-page" data-bs-spy="scroll" data-bs-target="#navmenu"{% endblock %}>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T78BMZCS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {% block header %}
+        {% include 'base/header.html' %}
+    {% endblock %}
+
+    {% block main %}
+    {% endblock %}
+
+    {% block footer %}
+        {% include 'base/footer.html' %}
+    {% endblock %}
+
+    {% block scroll %}
+    <!-- Scroll Top Button -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    {% endblock %}
+
+    {% block preloader %}{% endblock %}
+
+    {% block scripts %}
+    {% include 'base/scripts.html' %}
+        {% block jquery_content %}{%  endblock %}
+    {% endblock %}
+
+</body>
+</html>

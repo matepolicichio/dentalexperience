@@ -1,0 +1,167 @@
+{% load static %}
+<!-- Testimonials Section - Home Page -->
+<section id="{{ section_selection.section.html_id }}" class="testimonials">
+
+  <div class="container">
+
+    <div class="row align-items-center">
+
+      <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+        <h3>Testimonios</h3>
+        <p>
+          Descubre las experiencias reales de nuestros pacientes a través de sus conmovedores testimonios. Sus
+          historias destacan cómo hemos transformado sonrisas y vidas.
+        </p>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="swiper">
+          <template class="swiper-config">
+            {
+            "loop": true,
+            "speed" : 600,
+            "autoplay": {
+            "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+            "el": ".swiper-pagination",
+            "type": "bullets",
+            "clickable": true
+            }
+            }
+          </template>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="{% static 'base/img/testimonios/testimonio1.png' %}" class="testimonial-img flex-shrink-0"
+                    alt="">
+                  <div>
+                    <h3>Melissa Villa</h3>
+                    <h4></h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Todos son excelentes dentistas el trato es muy bueno , la explicación muy detallada, el lugar
+                    super limpio, mi hija entro con miedo como toda niña pero salío contenta con el resultado del buen
+                    trabajo que se le hizo ahora espera ansiosa el día para ir a sus citas 100% recomendados"</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="{% static 'base/img/testimonios/testimonio2.png' %}" class="testimonial-img flex-shrink-0"
+                    alt="">
+                  <div>
+                    <h3>Anita Hernandez</h3>
+                    <h4></h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"My daughter and I make the 4 hour drive to Cívico Dental Care Mexicali. The service is top
+                    notch and very professional. The dental work that we have both received has been excellent, and at a
+                    fraction of the price we would have paid here in the US. I have recommended several family members
+                    there, I believe that speaks volumes of my confidence and trust I have placed on CDCM with my dental
+                    care."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="{% static 'base/img/testimonios/testimonio3.png' %}" class="testimonial-img flex-shrink-0"
+                    alt="">
+                  <div>
+                    <h3>Jorge Alejandro Aguilar Espinosa</h3>
+                    <h4></h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Excelente servicio, muy agusto con mi tratamiento súper recomendados"</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="{% static 'base/img/testimonios/testimonio4.png' %}" class="testimonial-img flex-shrink-0"
+                    alt="">
+                  <div>
+                    <h3>Alma Garcia</h3>
+                    <h4></h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Muy Buena atención,los mejores especialistas,muy atento todo el personal 😃 a mí me atendieron
+                    muy bien! La recomiendo 100% ❤️"</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <div class="d-flex">
+                  <img src="{% static 'base/img/testimonios/testimonio5.png' %}" class="testimonial-img flex-shrink-0"
+                    alt="">
+                  <div>
+                    <h3>Evelyn Arce</h3>
+                    <h4></h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>"Excelente servicio, siempre me atendían a la hora de mi cita y todos muy amables, siempre
+                    contestaban mensajes y estoy contenta con el servicio. Dra Akira muy amable y trabajo
+                    excelente."</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- End Testimonials Section -->

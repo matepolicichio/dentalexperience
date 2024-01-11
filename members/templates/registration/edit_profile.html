@@ -1,0 +1,45 @@
+{% extends 'base/base.html' %}
+{% block title %}Editar Perfil de Usuario{% endblock %}
+
+{% block body_class %}
+class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu"
+{% endblock %}
+
+{% block main %}
+
+<main id="main">
+
+    <!-- Blog Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title">
+        <div class="heading">
+            <div class="container">
+                <div class="row d-flex justify-content-start text-start">
+                    <div class="col-lg-8">
+                        <h1>Editar Perfil de Usuario</h1>
+                        <p class="mb-0">Actualice los siguientes campos para actualizar su Perfil de Usuario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Page Title -->
+
+    {% if user.is_authenticated and user.id == profile.user.id %}
+    <section class="">
+        <div class='container'>
+            <div class="form-group">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.media }}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary">Update Profile</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <p>Acceso no permitido</p>
+    {% endif %}
+
+</main>
+
+{% endblock %}
