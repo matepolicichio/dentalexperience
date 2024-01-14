@@ -1714,11 +1714,18 @@ opacity: 1;: The element is fully opaque.
 
 .team .member .member-img {
   margin: 0 80px;
-  border-radius: 10%;
+  clip-path: circle(40% at 50% 40%);
   overflow: hidden;
   position: relative;
-  border: 4px solid var(--color-box-background);
+  border: 1px solid var(--color-box-background);
   box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s; /* Adding a smooth transition effect */
+}
+
+.team .member .member-img:hover {
+  opacity: 0.6;
+  border: 1px solid var(--color-box-background);
+  transform: scale(1.2);
 }
 
 @media (max-width: 1024px) {
