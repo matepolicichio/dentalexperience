@@ -1,9 +1,14 @@
 /* Fonts */
 :root {
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-primary: "Montserrat", sans-serif;
-  --font-secondary: "Lato", sans-serif;
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: "Open Sans", sans-serif;
+
+  /* --font-primary: "Montserrat", sans-serif; */
+/* --font-secondary: "Lato", sans-serif; */
 }
+
+
 
 /* Global Colors */
 :root {
@@ -173,7 +178,7 @@ section {
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 32px;
   margin: 0;
   font-weight: 600;
   color: var(--color-secondary);
@@ -1714,6 +1719,7 @@ opacity: 1;: The element is fully opaque.
 
 .team .member .member-img {
   margin: 0 80px;
+  /* border-radius: 50%; */
   clip-path: circle(40% at 50% 40%);
   overflow: hidden;
   position: relative;
@@ -1722,11 +1728,14 @@ opacity: 1;: The element is fully opaque.
   transition: transform 0.3s; /* Adding a smooth transition effect */
 }
 
+
 .team .member .member-img:hover {
   opacity: 0.6;
   border: 1px solid var(--color-box-background);
   transform: scale(1.2);
 }
+
+
 
 @media (max-width: 1024px) {
   .team .member .member-img {
