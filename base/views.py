@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Header
 from .forms import ContactForm
 from promociones.models import Post as PromoPost
 from promociones.models import Page as PromoPage
@@ -20,6 +21,8 @@ def index(request):
         is_visible=True,
         page__template_path=template_path_filter)
     
+    header = Header.objects.first()
+
     promo_posts = PromoPost.objects.filter(is_visible=True).order_by('-post_date')
     service_posts = ServicePost.objects.filter(is_visible=True).order_by('-post_date')
 
@@ -42,6 +45,7 @@ def index(request):
 
     context = {
         'sections': sections,
+        'header': header,
         'hero': hero,
         'promo_posts': promo_posts,
         'service_posts': service_posts,

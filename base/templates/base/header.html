@@ -4,24 +4,24 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
+      {% if header %}
       <a href="{% url 'base:index' %}" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="{% static 'base/img/favicon.svg' %}" alt="base-logo"> -->
-
-        <img src="{% static 'base/img/logo.png' %}" alt="Logo" width="80">
-        <h1>Dental Experience Cancun</h1>
-        <!-- <span>.</span> -->
+        {% if header.logo_image %}
+        <img src="{{ header.logo_image.url }}" alt="Logo">
+        {% endif %}
+        {{ header.logo_text | safe }}
       </a>
+      {% endif %}
 
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
           {% if sections %}
           {% for nav in sections %}
-          {% if nav.is_visible and nav.nav_enabled and nav.page.template_path == 'base/index.html' %}
-
-          <li><a href="{% url 'base:index' %}#{{ nav.section.html_id }}">{{ nav.section.name }}</a></li>
-
+          {% if nav.is_visible and nav.nav_enabled %}
+            {% if nav.page.template_path == 'base/index.html' %}
+              <li><a href="{% url 'base:index' %}#{{ nav.section.html_id }}">{{ nav.section.name }}</a></li>            
+            {% endif %}
           {% endif %}
           {% endfor %}
           {% endif %}
@@ -30,11 +30,16 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav><!-- End Nav Menu -->
 
-      <!-- <a class="btn-getstarted" href="{% url 'base:index' %}#about">Comenzar</a> -->
-      <a href="https://api.whatsapp.com/send?phone=5216869464883&text=Hola,%20me%20gustaría%20recibir%20más%20información.%0A- Nombre:%0A- Correo:%0AEnviado%20desde%20mi%20página%20web:%20https://dentalexperience.com.mx/"
-      class="btn-getstarted" target="_blank">
-        <i class="bi bi-whatsapp"></i> <!-- This is the WhatsApp icon from Bootstrap Icons -->
+      {% if header.is_getstarted_enabled %}
+      <a class="btn-getstarted" href="{% url 'base:index' %}#{{ header.getstarted_link2section }}">{{ header.getstarted_text }}</a>
+      {% endif %}
+
+      {% if header.is_whatsapp_enabled %}
+      <a href="https://api.whatsapp.com/send?phone={{ header.whats_number }}&text={{ header.whats_message }}"
+      class="btn-whatsapp" target="_blank">
+        <i class="bi bi-whatsapp"></i>
       </a>
+      {% endif %}
 
     </div>
   </header><!-- End Header -->

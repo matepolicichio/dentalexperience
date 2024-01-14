@@ -11,8 +11,8 @@
   --color-default-rgb: 33, 37, 41;
   --color-background: #ffffff;
   --color-background-rgb: 255, 255, 255;
-  --color-primary: #32869e;
-  --color-primary-rgb: 50, 134, 158;
+  --color-primary: #0084c9;
+  --color-primary-rgb: 0, 132, 201;
   --color-secondary: #32353a;
   --color-secondary-rgb: 50, 134, 158;
   --color-box-background: #ffffff;
@@ -161,24 +161,28 @@ section {
   --color-inverse: #ffffff;
   color: var(--color-default);
   background-color: var(--color-background);
+  height: 100px;
   padding: 15px 0;
   transition: all 0.5s;
   z-index: 997;
 }
 
 .header .logo img {
-  /* max-height: 40px; */
+  max-height: 60px;
   margin-right: 6px;
-  /* fill: var(--color-secondary);
-  stroke: red;
-  stroke-width: 0.25;
-  stroke-miterlimit: 10; */
 }
 
 .header .logo h1 {
-  font-size: 24px;
+  font-size: 30px;
   margin: 0;
   font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.header .logo h2 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
   color: var(--color-secondary);
 }
 
@@ -191,7 +195,24 @@ section {
 
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
-  color: var(--color-primary);
+  color: var(--color-inverse);
+  background: var(--color-primary);
+  font-size: 14px;
+  padding: 8px 26px;
+  margin: 0;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--color-inverse);
+  background: rgba(var(--color-primary-rgb), 0.85);
+}
+
+.header .btn-whatsapp,
+.header .btn-whatsapp:focus {
+  color: var(--color-secondary);
   /* background: var(--color-primary); */
   /* font-size: 14px; */
   font-size: 30px; /*added*/
@@ -201,9 +222,9 @@ section {
   transition: 0.3s;
 }
 
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-  color: var(--color-primary);
+.header .btn-whatsapp:hover,
+.header .btn-whatsapp:focus:hover {
+  /* color: var(--color-secondary); */
   font-size: 35px; /*added*/
   /* background: rgba(var(--color-primary-rgb), 0.85); */
 }
@@ -214,13 +235,19 @@ section {
   }
 
   .header .btn-getstarted {
+    order: 3;
+    margin: 0 15px 0 0;
+    padding: 6px 20px;
+  }
+
+  .header .btn-whatsapp {
     order: 2;
     margin: 0 15px 0 0;
     padding: 6px 20px;
   }
 
   .header .navmenu {
-    order: 3;
+    order: 4;
   }
 }
 
