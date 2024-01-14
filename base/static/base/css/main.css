@@ -1062,22 +1062,28 @@ opacity: 1;: The element is fully opaque.
 }
 
 .about .icon-box {
-  padding: 50px 40px;
+  padding: 40px 40px;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 5%;
   transition: all 0.3s ease-out 0s;
   background-color: var(--color-box-background);
 }
 
+.about .icon-box:hover {
+  background-color: rgba(var(--color-primary-rgb), 0.05);
+  /* color: var(--color-inverse); */
+}
+
+
 .about .icon-box i {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 10%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  font-size: 32px;
+  font-size: 28px; 
   line-height: 0;
   transition: all 0.4s ease-out 0s;
   background-color: rgba(var(--color-primary-rgb), 0.05);
@@ -1102,7 +1108,7 @@ opacity: 1;: The element is fully opaque.
 
 .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
 .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
-  margin-top: -40px;
+  margin-top: 0px;
 }
 
 @media (max-width: 768px) {
