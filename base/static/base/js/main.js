@@ -46,6 +46,13 @@ function toggleScrollTop() {
     });
   }
 
+  const preloader2 = document.querySelector('#preloader2');
+  if (preloader2) {
+    window.addEventListener('load', () => {
+      preloader2.remove();
+    });
+  }
+
   
   
   /**

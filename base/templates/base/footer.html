@@ -1,73 +1,65 @@
 {% load static %}
 
 <!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
+<footer id="footer" class="footer2">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="{% url 'base:index' %}" class="logo d-flex align-items-center">
-            <span>Dental Experience Cancun</span>
-          </a>
-          <p>Comienza tu camino hacia una salud bucal óptima</p>
-          <div class="social-links d-flex mt-4">
-            <!-- <a href=""><i class="bi bi-twitter"></i></a> -->
-            <a href="https://www.facebook.com/DentalExperienceCancun" target="_blank"><i
-                class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/dental_experience1/" target="_blank"><i
-                class="bi bi-instagram"></i></a>
-            <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
-          </div>
+  <div class="container">
+    <div class="row gy-3">
+      <div class="col-lg-3 col-md-6 d-flex">
+        <i class="bi bi-geo-alt-fill icon"></i>
+        <div>
+          <h4>Dirección</h4>
+          <p>
+            Plaza las Torres Av. Las Torres Sm 55 lote 3<br>
+            Local 10, Planta Alta<br>
+            77533 Cancún, México<br>
+          </p>
         </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Links más usados</h4>
-          <ul>
-            {% if sections %}
-            {% for nav in sections %}
-            {% if nav.is_visible and nav.nav_enabled and nav.page.template_path == 'base/index.html' %}
-              <li><a href="{% url 'base:index' %}#{{ nav.section.html_id }}">{{ nav.section.name }}</a></li>
-            {% endif %}
-            {% endfor %}
-            {% endif %}
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Nuestros servicios</h4>
-          <ul>
-            {% if service_posts %}
-            {% for service in service_posts %}
-            <li><a href="{% url 'services:article-detail' service.pk %}">{{ service.title }}</a></li>
-            {% endfor %}
-            {% endif %}
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contacto</h4>
-          <p>Calzada Independencia 1086</p>
-          <p>Frente a Plaza Toros Calafia</p>
-          <p>Centro Cívico</p>
-          <p>21000 Mexicali, B.C.</p>
-          <p>México</p>
-          <p class="mt-4"><strong>Telefono USA:</strong> <span>+1.760.848.39.11</span></p>
-          <p><strong>Email:</strong> <span>cdccivico@gmail.com</span></p>
-        </div>
-
       </div>
-    </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>&copy; <span>Copyright</span> <strong class="px-1">Cívico Dental Care</strong> <span>All Rights Reserved</span>
-      </p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://ingenios.com.ar/">InGenios</a>
+      <div class="col-lg-3 col-md-6 footer-links d-flex">
+        <i class="bi bi-whatsapp icon"></i>
+        <div>
+          <h4>Contáctanos</h4>
+          <p>
+            <strong>Whatsapp:</strong> +52 998 489 9792<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+        </div>
       </div>
-    </div>
 
-  </footer><!-- End Footer -->
+      <div class="col-lg-3 col-md-6 footer-links d-flex">
+        <i class="bi bi-clock icon"></i>
+        <div>
+          <h4>Horarios</h4>
+          <p><strong>Lunes-Viernes</strong><br>
+          09.30 - 14.00; 16.00 - 20.00<br>
+          <strong>Sábado</strong><br>
+          09.00 - 14.00<br>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Seguinos</h4>
+        <div class="social-links d-flex">
+          <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
+          <a href="https://www.facebook.com/DentalExperienceCancun" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/dental_experience1/" class="instagram"><i class="bi bi-instagram"></i></a>
+          <!-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Dental Experience</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://ingenios.com.ar/">InGenios</a>
+    </div>
+  </div>
+
+</footer><!-- End Footer -->
+<!-- End Footer -->
