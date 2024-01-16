@@ -87,7 +87,8 @@ section {
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  /* padding-bottom: 60px; */
+  padding-bottom: 20px;
 }
 
 .section-title h2 {
@@ -133,7 +134,8 @@ section {
 
 .section-header {
   text-align: center;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
+  padding-bottom: 20px;
 }
 
 .section-header h2 {
@@ -157,8 +159,6 @@ section {
 .section-header p span {
   color: var(--color-primary);
 }
-
-
 
 
 /*--------------------------------------------------------------
@@ -369,9 +369,11 @@ section {
   .navmenu a:focus {
     color: var(--color-nav);
     padding: 18px 15px;
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 24px;
     font-family: var(--font-secondary);
-    font-weight: 400;
+    /* font-weight: 400; */
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -506,7 +508,7 @@ section {
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--color-nav);
-    font-size: 28px;
+    font-size: 50px;
     line-height: 0;
     margin-right: 10px;
     cursor: pointer;
