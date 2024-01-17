@@ -1,9 +1,9 @@
 <section id="{{ section_selection.section.html_id }}" class="blog">
 
-    <div class="container section-title" data-aos="fade-up">
+    <div class="container section-header" data-aos="fade-up">
         {% if service_page_content %}
         <a href="{% url 'services:home' %}"><h2>{{ service_page_content.name }}</h2></a>
-        <p>{{ service_page_content.description }}</p>
+        <p>{{ service_page_content.description | safe }}</p>
         {% endif %}
     </div>
 
@@ -22,14 +22,14 @@
             {% for post in service_posts %}
             <div class="card bx col-lg-6 align-items-center justify-content-center p-3">
                 <div class="row col-lg-12 g-0 align-items-center justify-content-center">
+                    
+                    {% if post.header_image %}
                     <div class="col-lg-4">
-                        {% if post.header_image %}
                         <a href="{% url 'services:article-detail' post.pk %}">
                             <img src="{{ post.header_image.url }}" alt="..." class="img-fluid rounded-start">
                         </a>
-                        {% endif %}
                     </div>
-
+                    {% endif %}
 
                     <div class="col-lg-8">
                         <div class="card-body">

@@ -1,8 +1,9 @@
 <section id="{{ section_selection.section.html_id }}" class="blog">
-    <div class="container section-title" data-aos="fade-up">
+    
+    <div class="container section-header" data-aos="fade-up">
         {% if promo_page_content %}
         <a href="{% url 'promociones:home' %}"><h2>{{ promo_page_content.name }}</h2></a>
-        <p>{{ promo_page_content.description }}</p>
+        <p>{{ promo_page_content.description | safe }}</p>
         {% endif %}
     </div>
 
@@ -22,19 +23,20 @@
             <div class="col-xl-4 col-md-6">
                 <article class="article">
 
-
+                    {% if post.header_image %}
                     <div class="post-img">
-                        {% if post.header_image %}
                         <a href="{% url 'promociones:article-detail' post.pk %}">
                             <img src="{{ post.header_image.url }}" alt="..." class="img-fluid">
                         </a>
-                        {% endif %}
                     </div>
-                    
+                    {% endif %}                    
 
                     <div class="d-flex align-items-center justify-content-between">
 
+                        {% if post.category %}
                         <p class="post-category">{{ post.category }}</p>
+                        {% endif %}
+
                         {% if user.is_authenticated and user.is_staff %}
                         <div>
                             <small>
@@ -51,6 +53,7 @@
 
                     <p class="post-category">{{ post.snippet }}</p>
 
+                    {% comment %}
                     <div class="d-flex align-items-center justify-content-start">
 
                         {% if post.author.profile and post.author.profile.profile_pic %}
@@ -65,6 +68,7 @@
                             <p class="post-date">{{ post.post_date }}</p>
                         </div>
                     </div>
+                    {% endcomment %}
 
                 </article>
             </div>

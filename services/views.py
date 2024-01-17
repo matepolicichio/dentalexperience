@@ -2,6 +2,7 @@ import os
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Category, Tag, Page
+from base.models import Header
 from sectionselection.models import SectionSelection
 from calltoaction.models import CallToAction
 from .forms import PostForm
@@ -21,6 +22,8 @@ def HomeView(request):
         is_visible=True,
         page__template_path=template_path_filter)
     
+    header = Header.objects.first()    
+    
     posts = Post.objects.filter(is_visible=True).order_by('sort_order')
     
     enabled_calltoaction = CallToAction.objects.filter(is_mainpage_enabled=True)
@@ -33,6 +36,7 @@ def HomeView(request):
 
     context = {
         'sections': sections,
+        'header': header,
         'service_posts': posts,
         'calltoaction': calltoaction,
         'service_page_content': service_page_random_content,
@@ -66,6 +70,8 @@ def ArticleDetailView(request, pk):
     post = get_object_or_404(Post, pk=pk)
     posts = Post.objects.filter(is_visible=True).order_by('-post_date')
 
+    header = Header.objects.first() 
+
     calltoaction = None
     if post.call2action:
         calltoaction = get_object_or_404(CallToAction, id=post.call2action.id)  
@@ -82,6 +88,7 @@ def ArticleDetailView(request, pk):
 
     context = {
         'sections': sections,
+        'header': header,
         'post': post,
         'service_posts': posts,
         'calltoaction': calltoaction,        

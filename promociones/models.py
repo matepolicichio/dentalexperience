@@ -9,7 +9,7 @@ from django.core.exceptions import ValidationError
 
 class Page(models.Model):
     name = models.CharField(max_length=255, default="Promociones")
-    description = models.TextField(null=True, blank=True)
+    description = models.TextField(null=True, blank=True, default="<p>Descripción de <span>Promociones ...</span></p>")
     is_enabled = models.BooleanField(default=True)
 
     def __str__(self):

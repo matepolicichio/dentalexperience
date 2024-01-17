@@ -2,3 +2,6 @@ __pycache__/
 */migrations/*
 !*/migrations/__init__.py
 /media/
+dentalexperience/settings.py
+base/templates/base/footer22.html
+base/templates/base/section/contact22.html
