@@ -17,9 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
    * this event listener scrolls the window to the top with a smooth scrolling behavior.
    */
 
-let scrollTop = document.querySelector('.scroll-top');
+  let scrollTop = document.querySelector('.scroll-top');
 
-function toggleScrollTop() {
+  function toggleScrollTop() {
     if (scrollTop) {
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
@@ -53,16 +53,16 @@ function toggleScrollTop() {
     });
   }
 
-  
-  
+
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
 
-// [martin]
-//  toggleScrolled(): This function adds or removes the "scrolled" class from the selectBody element based on the scroll position.
-//  It checks if the selectHeader element has certain classes related to sticky positioning, and if the window has scrolled down more than 100 pixels,
-//  it adds the "scrolled" class to the selectBody element; otherwise, it removes the "scrolled" class.  
+  // [martin]
+  //  toggleScrolled(): This function adds or removes the "scrolled" class from the selectBody element based on the scroll position.
+  //  It checks if the selectHeader element has certain classes related to sticky positioning, and if the window has scrolled down more than 100 pixels,
+  //  it adds the "scrolled" class to the selectBody element; otherwise, it removes the "scrolled" class.  
 
   const selectBody = document.querySelector('body');
   const selectHeader = document.querySelector('#header');
@@ -83,7 +83,7 @@ function toggleScrollTop() {
   let lastScrollTop = 0;
   window.addEventListener('scroll', function () {
     if (!selectHeader.classList.contains('scroll-up-sticky')) return;
-select
+    select
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop && scrollTop > selectHeader.offsetHeight) {this.queueMicrotask

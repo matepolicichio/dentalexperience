@@ -21,10 +21,10 @@
     <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row posts-list gy-4">
             {% for post in service_posts %}
-            <div class="col-lg-6">
+            <div class="col-xl-4 col-md-6">
                 <div class="card align-items-center justify-content-center" {% if post.header_image %}
                     style="background-image: url('{{ post.header_image.url }}');" {% endif %}>
-                
+
                     <a href="{% url 'services:article-detail' post.pk %}" class="card-overlay"></a>
 
                     <div class="card-body">
@@ -53,21 +53,25 @@
     </div>
 
     <style>
+
         .card {
             background-size: cover;
             background-position: center;
             position: relative;
             overflow: hidden;
             border: none;
-
-
             box-shadow: 0 4px 16px rgba(var(--color-default-rgb), 0.1);
             padding: 30px;
             border-radius: 10px;
+            height: 100%;
+            transition: transform 0.3s ease;
+            /* Adding transition for smooth effect */
+        }
 
-            height:100%;
-
-
+        .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 16px rgba(var(--color-default-rgb), 0.2);
+            /* Increase the size on hover */
         }
 
         .card-overlay {
@@ -85,6 +89,7 @@
             z-index: 2;
             width: 100%;
         }
+
     </style>
 
     {% endif %}

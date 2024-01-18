@@ -16,24 +16,25 @@
       </div>
     </div>
 
-    <div id="carouselTeam" class="carousel slide" data-ride="carousel" data-interval="2000">
+    <div id="carouselTeam" class="carousel carousel-dark slide" data-bs-ride="carousel" data-aos="fade-up">
 
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <div class="carousel-indicators mt-3">
+        <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="0" class="active" aria-current="true"
+          aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="2" aria-label="Slide 3"></button>
         <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
 
       <div class="carousel-inner">
-        <!-- First Slide -->
+
         <div class="carousel-item active">
           <div class="row gy-3 justify-content-center align-items-center p-3">
             <div class="col-6 text-center">
-              <img src="{% static 'base/img/equipo/equipo1.jpg' %}" class="img-fluid rounded-circle" alt="...">
+              <img src="{% static 'base/img/equipo/equipo1.jpg' %}" class="d-block w-100 rounded-circle" alt="...">
             </div>
             <div class="col-6 text-center">
-              <img src="{% static 'base/img/equipo/equipo2.jpg' %}" class="img-fluid rounded-circle" alt="...">
+              <img src="{% static 'base/img/equipo/equipo2.jpg' %}" class="d-block w-100 rounded-circle" alt="...">
             </div>
 
             <div class="col-6 text-center">
@@ -50,7 +51,7 @@
           </div>
         </div>
 
-        <!-- Second Slide -->
+
         <div class="carousel-item">
           <div class="row gy-3 justify-content-center align-items-center p-3">
             <div class="col-6 text-center">
@@ -73,7 +74,7 @@
           </div>
         </div>
 
-        <!-- Third Slide -->
+
         <div class="carousel-item">
           <div class="row gy-3 justify-content-center align-items-center p-3">
             <div class="col-6 text-center">
@@ -96,8 +97,6 @@
           </div>
         </div>
 
-
-        <!-- Fourth Slide -->
         <div class="carousel-item">
           <div class="row gy-3 justify-content-center align-items-center p-3">
             <div class="col-6 text-center">
@@ -120,8 +119,6 @@
           </div>
         </div>
 
-        <!-- Repeat the pattern for additional slides as needed -->
-
       </div>
 
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselTeam" data-bs-slide="prev">
@@ -136,4 +133,6 @@
     </div>
 
 </section>
+
+
 <!-- End Team Section -->
