@@ -22,10 +22,12 @@
         <div class="row posts-list gy-4">
             {% for post in service_posts %}
             <div class="col-xl-4 col-md-6">
+
                 <div class="card align-items-center justify-content-center" {% if post.header_image %}
                     style="background-image: url('{{ post.header_image.url }}');" {% endif %}>
 
-                    <a href="{% url 'services:article-detail' post.pk %}" class="card-overlay"></a>
+                    <div class="card-overlay"></div>
+                    <a href="{% url 'services:article-detail' post.pk %}" class="card-link"></a>
 
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-end">
@@ -39,22 +41,21 @@
                             {% endif %}
                         </div>
                         <h2 class="title">
-                            <a href="{% url 'services:article-detail' post.pk %}">{{ post.title }}</a>
+                            {{ post.title }}
                         </h2>
                         <p class="description">{{ post.snippet }}</p>
-                        <!-- <p class="post-category">{{ post.category }}</p>
-                            <p class="description"><small>{{ post.post_date }}</small></p> -->
                     </div>
 
                 </div>
+
             </div>
             {% endfor %}
         </div>
     </div>
 
-    <style>
 
-        .card {
+    <style>
+        .blog .card {
             background-size: cover;
             background-position: center;
             position: relative;
@@ -65,16 +66,9 @@
             border-radius: 10px;
             height: 100%;
             transition: transform 0.3s ease;
-            /* Adding transition for smooth effect */
         }
 
-        .card:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 16px rgba(var(--color-default-rgb), 0.2);
-            /* Increase the size on hover */
-        }
-
-        .card-overlay {
+        .blog .card-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -85,11 +79,26 @@
             display: block;
         }
 
-        .card-body {
+
+        .blog .card-body {
             z-index: 2;
             width: 100%;
         }
 
+        .blog .card-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            display: block;
+        }
+
+        .blog .card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 16px rgba(var(--color-default-rgb), 0.2);
+        }
     </style>
 
     {% endif %}

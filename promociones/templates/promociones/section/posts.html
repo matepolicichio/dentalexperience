@@ -23,13 +23,15 @@
             <div class="col-xl-4 col-md-6">
                 <article class="article">
 
+                    <a href="{% url 'promociones:article-detail' post.pk %}" class="card-link"></a>
+
                     {% if post.header_image %}
                     <div class="post-img">
                         <a href="{% url 'promociones:article-detail' post.pk %}">
                             <img src="{{ post.header_image.url }}" alt="..." class="img-fluid">
                         </a>
                     </div>
-                    {% endif %}                    
+                    {% endif %}          
 
                     <div class="d-flex align-items-center justify-content-between">
 
