@@ -2,166 +2,138 @@
 <!-- Team Section - Home Page -->
 
 <section id="{{ section_selection.section.html_id }}" class="team">
-
   <!--  Section Title -->
 
   <div class="container">
-    <div class="row gy-5 justify-content-center align-items-center">
+
+    <div class="row gy-5 justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="100">
       <div class="section-header">
         <h2>Profesionales</h2>
         <p>Somos <span>Especialistas</span></p>
+        <p class="font-default">Nuestro equipo está compuesto por profesionales altamente calificados y apasionados. Nos
+          distinguimos por la
+          empatía, la dedicación y el compromiso con la excelencia en cada tratamiento.</p>
+      </div>
+    </div>
+
+    <div id="carouselTeam" class="carousel slide" data-ride="carousel" data-interval="2000">
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
 
-      <div class="section-title mt-0" data-aos="fade-up">
-        <p>Nuestro equipo está compuesto por profesionales altamente calificados y apasionados. Nos distinguimos por la
-          empatía, la dedicación y el compromiso con la excelencia en cada tratamiento.</p>
-      </div><!-- End Section Title -->
-    </div>
-  </div>
+      <div class="carousel-inner">
+        <!-- First Slide -->
+        <div class="carousel-item active">
+          <div class="row gy-3 justify-content-center align-items-center p-3">
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo1.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo2.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
 
-  <div class="container">
+            <div class="col-6 text-center">
+              <h5>Dra. Ivonne Díaz</h5>
+              <p>Esp. Ortodoncia Gnatológica y Ortopedia Maxilar</p>
+            </div>
 
-    <div class="row gy-5 justify-content-center align-items-center">
+            <div class="col-6 text-center">
+              <h5>Dr. Diego Romero</h5>
+              <p>Esp. Periodoncia e Implantología
+              <p>
+            </div>
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="100">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo1.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
+          </div>
         </div>
-        <div class="member-info text-center">
-          <h4>Dra. Ivonne Díaz</h4>
-          <span>Esp. Ortodoncia Gnatológica y Ortopedia Maxilar</span>
-          <p></p>
-        </div>
-      </div><!-- End Team Member -->
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="200">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo2.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
-        </div>
-        <div class="member-info text-center">
-          <h4>Dr. Diego Romero</h4>
-          <span>Esp. Periodoncia e Implantología</span>
-          <p></p>
-        </div>
-      </div><!-- End Team Member -->
+        <!-- Second Slide -->
+        <div class="carousel-item">
+          <div class="row gy-3 justify-content-center align-items-center p-3">
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo3.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo4.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="300">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo3.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
-        </div>
-        <div class="member-info text-center">
-          <h4>Dra. María del Mar Ocharán</h4>
-          <span>Esp. Endodoncia</span>
-          <p></p>
-        </div>
-      </div><!-- End Team Member -->
+            <div class="col-6 text-center">
+              <h5>Dra. María del Mar Ocharán</h5>
+              <p>Esp. Endodoncia</p>
+            </div>
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="400">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo4.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
-        </div>
-        <div class="member-info text-center">
-          <h4>Dra. Anali Mora Pérez</h4>
-          <span>Esp. Odontopediatría</span>
-          <p></p>
-        </div>
-      </div><!-- End Team Member -->
+            <div class="col-6 text-center">
+              <h5>Dra. Anali Mora Pérez</h5>
+              <p>Esp. Odontopediatría</p>
+            </div>
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="500">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo5.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
+          </div>
         </div>
-        <div class="member-info text-center">
-          <h4>Dr. Abraham Oliva</h4>
-          <span>Esp Cirugía Maxilofacial</span>
-          <p></p>
-        </div>
-      </div><!-- End Team Member -->
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="600">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo6.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
-        </div>
-        <div class="member-info text-center">
-          <h4>Isabella Chiriboga</h4>
-          <span>Auxiliar Dental</span>
-          <p></p>
-        </div>
-      </div><!-- End Team Member -->
+        <!-- Third Slide -->
+        <div class="carousel-item">
+          <div class="row gy-3 justify-content-center align-items-center p-3">
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo5.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo6.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="700">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo7.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
-        </div>
-        <div class="member-info text-center">
-          <h4>Bárbara Uribe</h4>
-          <span>Auxiliar Dental</span>
-          <p></p>
-        </div>
-      </div><!-- End Team Member -->
+            <div class="col-6 text-center">
+              <h5>Dr. Abraham Oliva</h5>
+              <p>Esp Cirugía Maxilofacial</p>
+            </div>
 
-      <div class="col-6 col-lg-4 member" data-aos="fade-up" data-aos-delay="800">
-        <div class="member-img">
-          <img src="{% static 'base/img/equipo/equipo8.jpg' %}" class="img-fluid" alt="">
-          <!-- <div class="social">
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
-          <a href="#"><i class="bi bi-linkedin"></i></a>
-        </div> -->
+            <div class="col-6 text-center">
+              <h5>Isabella Chiriboga</h5>
+              <p>Auxiliar Dental</p>
+            </div>
+
+          </div>
         </div>
-        <div class="member-info text-center">
-          <h4>Laura Aguirre</h4>
-          <span>Recepcionista</span>
-          <p></p>
+
+
+        <!-- Fourth Slide -->
+        <div class="carousel-item">
+          <div class="row gy-3 justify-content-center align-items-center p-3">
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo7.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
+            <div class="col-6 text-center">
+              <img src="{% static 'base/img/equipo/equipo8.jpg' %}" class="img-fluid rounded-circle" alt="...">
+            </div>
+
+            <div class="col-6 text-center">
+              <h5>Bárbara Uribe</h5>
+              <p>Auxiliar Dental</p>
+            </div>
+
+            <div class="col-6 text-center">
+              <h5>Laura Aguirre</h5>
+              <p>Recepcionista</p>
+            </div>
+
+          </div>
         </div>
-      </div><!-- End Team Member -->
+
+        <!-- Repeat the pattern for additional slides as needed -->
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselTeam" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselTeam" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
 
     </div>
-
-  </div>
 
 </section>
 <!-- End Team Section -->
