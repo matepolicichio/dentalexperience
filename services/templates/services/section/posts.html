@@ -2,7 +2,9 @@
 
     <div class="container section-header" data-aos="fade-up">
         {% if service_page_content %}
-        <a href="{% url 'services:home' %}"><h2>{{ service_page_content.name }}</h2></a>
+        <a href="{% url 'services:home' %}">
+            <h2>{{ service_page_content.name }}</h2>
+        </a>
         <p>{{ service_page_content.description | safe }}</p>
         {% endif %}
     </div>
@@ -11,53 +13,79 @@
     <div class="container">
         <div class="d-flex justify-content-end align-items-center">
             <a href="{% url 'services:add_post' %}"><i class="bi bi-plus-square-fill" style="font-size: 2em"></i></a>
-        </div>    
+        </div>
     </div>
     {% endif %}
 
     {% if service_posts.all %}
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 posts-list">
-
+        <div class="row posts-list gy-4">
             {% for post in service_posts %}
-            <div class="card bx col-lg-6 align-items-center justify-content-center p-3">
-                <div class="row col-lg-12 g-0 align-items-center justify-content-center">
-                    
-                    {% if post.header_image %}
-                    <div class="col-lg-4">
-                        <a href="{% url 'services:article-detail' post.pk %}">
-                            <img src="{{ post.header_image.url }}" alt="..." class="img-fluid rounded-start">
-                        </a>
-                    </div>
-                    {% endif %}
+            <div class="col-lg-6">
+                <div class="card align-items-center justify-content-center" {% if post.header_image %}
+                    style="background-image: url('{{ post.header_image.url }}');" {% endif %}>
+                
+                    <a href="{% url 'services:article-detail' post.pk %}" class="card-overlay"></a>
 
-                    <div class="col-lg-8">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-end">
-                            
-                                {% if user.is_authenticated and user.is_staff %}
-                                    <div>
-                                        <small>
-                                        <a href="{% url 'services:update_post' post.pk %}"><i class="bi bi-pencil"></i></a>
-                                        <a href="{% url 'services:delete_post' post.pk %}"><i class="bi bi-trash"></i></a>
-                                        </small>
-                                    </div>
-                                {% endif %}
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-end">
+                            {% if user.is_authenticated and user.is_staff %}
+                            <div>
+                                <small>
+                                    <a href="{% url 'services:update_post' post.pk %}"><i class="bi bi-pencil"></i></a>
+                                    <a href="{% url 'services:delete_post' post.pk %}"><i class="bi bi-trash"></i></a>
+                                </small>
                             </div>
-                            <h2 class="title">
-                                <a href="{% url 'services:article-detail' post.pk %}">{{ post.title }}</a>
-                            </h2>
-
-                            <p class="description">{{ post.snippet }}</p>
-                            <!-- <p class="post-category">{{ post.category }}</p>                        
-                            <p class="description"><small>{{ post.post_date }}</small></p> -->
+                            {% endif %}
                         </div>
-                    </div>                   
+                        <h2 class="title">
+                            <a href="{% url 'services:article-detail' post.pk %}">{{ post.title }}</a>
+                        </h2>
+                        <p class="description">{{ post.snippet }}</p>
+                        <!-- <p class="post-category">{{ post.category }}</p>
+                            <p class="description"><small>{{ post.post_date }}</small></p> -->
+                    </div>
+
                 </div>
             </div>
             {% endfor %}
-
         </div>
     </div>
+
+    <style>
+        .card {
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            border: none;
+
+
+            box-shadow: 0 4px 16px rgba(var(--color-default-rgb), 0.1);
+            padding: 30px;
+            border-radius: 10px;
+
+            height:100%;
+
+
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+            display: block;
+        }
+
+        .card-body {
+            z-index: 2;
+            width: 100%;
+        }
+    </style>
+
     {% endif %}
 </section>
