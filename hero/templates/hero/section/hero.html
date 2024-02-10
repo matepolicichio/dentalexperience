@@ -5,13 +5,11 @@
   
   {% if hero.background_image %}
   <img src="{{ hero.background_image.url }}" alt="...">
-  {% else %}
-  <img src="../../static/base/img/base_27.JPG" alt="" data-aos="fade-in">
   {% endif %}
 
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-lg-10">
         <h2 data-aos="fade-up" data-aos-delay="100">{{ hero.title }}</h2>
         <p data-aos="fade-up" data-aos-delay="200">{{ hero.description | safe }}</p>
 
@@ -24,12 +22,12 @@
         </div>
         {% endif %}
 
-        {% if hero.is_whatsapp_enabled %}  
-        <a href="https://api.whatsapp.com/send?phone={{ hero.whats_number }}&text={{ hero.whats_message }}" data-aos="fade-up" data-aos-delay="300"
-        class="cta-btn" target="_blank">{{ hero.whats_btn_text }} <i class="bi bi-whatsapp"></i>
+        {% if hero.is_whatsapp_enabled %}
+        <a href="https://api.whatsapp.com/send?phone={{ hero.whats_number }}&text={{ hero.whats_message|urlencode }}" data-aos="fade-up" data-aos-delay="300"
+        class="whatsapp cta-btn" target="_blank">{{ hero.whats_btn_text }} <i class="bi bi-whatsapp"></i>
         </a>
-        {% endif %}        
-
+        {% endif %}
+          
       </div>
 
     </div>

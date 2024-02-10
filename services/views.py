@@ -2,7 +2,7 @@ import os
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Category, Tag, Page
-from base.models import Header
+from base.models import Header, Footer
 from sectionselection.models import SectionSelection
 from calltoaction.models import CallToAction
 from .forms import PostForm
@@ -22,7 +22,11 @@ def HomeView(request):
         is_visible=True,
         page__template_path=template_path_filter)
     
-    header = Header.objects.first()    
+    nav_menu = SectionSelection.objects.filter(
+        nav_enabled=True)
+    
+    header = Header.objects.first()
+    footer = Footer.objects.first()    
     
     posts = Post.objects.filter(is_visible=True).order_by('sort_order')
     
@@ -36,7 +40,9 @@ def HomeView(request):
 
     context = {
         'sections': sections,
+        'nav_menu': nav_menu,
         'header': header,
+        'footer': footer,
         'service_posts': posts,
         'calltoaction': calltoaction,
         'service_page_content': service_page_random_content,
@@ -66,20 +72,24 @@ def ArticleDetailView(request, pk):
     sections = SectionSelection.objects.filter(
         is_visible=True,
         page__template_path=template_path_filter)
+    
+    nav_menu = SectionSelection.objects.filter(
+        nav_enabled=True)
+
+    header = Header.objects.first()
+    footer = Footer.objects.first()   
 
     post = get_object_or_404(Post, pk=pk)
-    posts = Post.objects.filter(is_visible=True).order_by('-post_date')
-
-    header = Header.objects.first() 
+    posts = Post.objects.filter(is_visible=True).order_by('sort_order')
 
     calltoaction = None
     if post.call2action:
         calltoaction = get_object_or_404(CallToAction, id=post.call2action.id)  
 
-    categories = Category.objects.all()
-    category_counts = {category.name: category.articles.count() for category in categories}
+    # categories = Category.objects.all()
+    # category_counts = {category.name: category.articles.count() for category in categories}
     
-    tags = Tag.objects.all()
+    # tags = Tag.objects.all()
 
     enabled_service_page_content = Page.objects.filter(is_enabled=True)    
     service_page_random_content = None
@@ -88,12 +98,12 @@ def ArticleDetailView(request, pk):
 
     context = {
         'sections': sections,
+        'nav_menu': nav_menu,
         'header': header,
+        'footer': footer,      
         'post': post,
         'service_posts': posts,
         'calltoaction': calltoaction,        
-        'category_counts': category_counts,
-        'tags': tags,
         'service_page_content': service_page_random_content,
     }
 

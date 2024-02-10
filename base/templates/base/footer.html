@@ -8,44 +8,59 @@
       <div class="col-lg-3 col-md-6 d-flex">
         <i class="bi bi-geo-alt-fill icon"></i>
         <div>
-          <h4>Dirección</h4>
-          <p>
-            Plaza las Torres Av. Las Torres Sm 55 lote 3<br>
-            Local 10, Planta Alta<br>
-            77533 Cancún, México<br>
-          </p>
+          <h4>{{ footer.address_title }}</h4>
+          {{ footer.address_description | safe }}
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6 footer-links d-flex">
+        {% if footer.is_contacto_description_enabled %}
         <i class="bi bi-whatsapp icon"></i>
         <div>
-          <h4>Contáctanos</h4>
-          <p>
-            <strong>Whatsapp:</strong> +52 998 489 9792<br>
-            <strong>Email:</strong> info@example.com<br>
-          </p>
+          <h4>{{ footer.contacto_title }}</h4>
+          {{ footer.contacto_description | safe }}
         </div>
+        {% endif %}
+
+        {% if footer.is_whatsapp_enabled %}
+        <div class="text-center">
+          <a href="https://api.whatsapp.com/send?phone={{ footer.whats_number }}&text={{ footer.whats_message|urlencode }}"
+            data-aos="fade-up" data-aos-delay="300" class="whatsapp cta-btn" target="_blank">{{ footer.whats_btn_text }}<br>
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+        {% endif %}
+
       </div>
 
       <div class="col-lg-3 col-md-6 footer-links d-flex">
         <i class="bi bi-clock icon"></i>
         <div>
-          <h4>Horarios</h4>
-          <p><strong>Lunes-Viernes</strong><br>
-          09.30 - 14.00; 16.00 - 20.00<br>
-          <strong>Sábado</strong><br>
-          09.00 - 14.00<br>
+          <h4>{{ footer.horario_title }}</h4>
+          {{ footer.horario_description | safe }}
         </div>
       </div>
 
       <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Seguinos</h4>
+        <h4>{{ footer.redes_title }}</h4>
         <div class="social-links d-flex">
-          <!-- <a href="#" class="twitter"><i class="bi bi-twitter"></i></a> -->
-          <a href="https://www.facebook.com/DentalExperienceCancun" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/dental_experience1/" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
-          <!-- <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
+
+          {% if footer.is_facebook_enabled %}
+          <a href="{{ footer.facebook_url }}" class="facebook" target="_blank"><i class="bi bi-facebook"></i></a>
+          {% endif %}
+
+          {% if footer.is_instagram_enabled %}
+          <a href="{{ footer.instagram_url }}" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+          {% endif %}
+
+          {% if footer.is_twitter_enabled %}
+          <a href="{{ footer.twitter_url }}" class="twitter" target="_blank"><i class="bi bi-twitter"></i></a>
+          {% endif %}
+
+          {% if footer.is_linkedin_enabled %}
+          <a href="{{ footer.linkedin_url }}" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+          {% endif %}
+
         </div>
       </div>
 
@@ -54,13 +69,39 @@
 
   <div class="container">
     <div class="copyright">
-      &copy; Copyright <strong><span>Dental Experience</span></strong>. All Rights Reserved
+      {{ footer.copyright | safe }}
     </div>
     <div class="credits">
-      Designed by <a href="https://ingenios.com.ar/">InGenios</a> and
-      <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      {{ footer.credits | safe }}
     </div>
   </div>
+
+
+<style>
+  .footer2 .cta-btn {
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 40px;
+    border-radius: 10px;
+    transition: 0.5s;
+    margin-top: 0px;
+    border: 1px solid var(--color-inverse);
+    color: var(--color-inverse);
+  }
+
+  .footer2 .cta-btn i {
+    font-size: 30px;
+  }
+  
+  .footer2 .cta-btn:hover {
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+  }
+</style>
+
 
 </footer><!-- End Footer -->
 <!-- End Footer -->

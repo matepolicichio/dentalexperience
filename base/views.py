@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Header
+from .models import Header, Footer
 from .forms import ContactForm
 from promociones.models import Post as PromoPost
 from promociones.models import Page as PromoPage
@@ -21,10 +21,14 @@ def index(request):
         is_visible=True,
         page__template_path=template_path_filter)
     
+    nav_menu = SectionSelection.objects.filter(
+        nav_enabled=True)
+    
     header = Header.objects.first()
+    footer = Footer.objects.first()
 
-    promo_posts = PromoPost.objects.filter(is_visible=True).order_by('-post_date')
-    service_posts = ServicePost.objects.filter(is_visible=True).order_by('-post_date')
+    promo_posts = PromoPost.objects.filter(is_visible=True).order_by('sort_order')
+    service_posts = ServicePost.objects.filter(is_visible=True).order_by('sort_order')
 
     enabled_calltoaction = CallToAction.objects.filter(is_mainpage_enabled=True)
     calltoaction = choice(enabled_calltoaction) if enabled_calltoaction.exists() else None
@@ -45,13 +49,15 @@ def index(request):
 
     context = {
         'sections': sections,
+        'nav_menu': nav_menu,
         'header': header,
+        'footer': footer,
         'hero': hero,
         'promo_posts': promo_posts,
         'service_posts': service_posts,
         'calltoaction': calltoaction,
         'promo_page_content': promo_page_random_content,
-        'service_page_content': service_page_random_content,        
+        'service_page_content': service_page_random_content,     
     }
 
     template_name = 'base/index.html'

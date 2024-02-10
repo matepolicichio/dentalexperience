@@ -1,6 +1,20 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 
+
+message = """"Hola, me gustaría recibir más información sobre las *Promociones y Tratamientos de Dental Experience*.
+Enviado desde dental experience webapp https://dentalexperience.ingenios.com.ar
+
+Tratamiento: *...*
+_Distintivo: ..._
+https://dentalexperience.ingenios.com.ar/services
+
+Pack: *...*
+_Promo: ..._
+https://dentalexperience.ingenios.com.ar/promociones
+
+Muchas Gracias,"""
+
 def validate_numeric_whatsapp_number(value):
     if not value.isdigit():
         raise ValidationError('WhatsApp number must contain only numeric characters.')
@@ -19,9 +33,9 @@ class CallToAction(models.Model):
         null=True,
         blank=True,
         validators=[validate_numeric_whatsapp_number],
-        default="5216869464883"
+        default="529984899792"
         )
-    whatsapp_message = models.TextField(null=True, blank=True, default="Hola, me gustaría recibir más información...")
+    whatsapp_message = models.TextField(null=True, blank=True, default=message)
     btn_text = models.CharField(max_length=50, default="Agenda tu cita")
 
     background_image = models.ImageField(null=True, blank=True, upload_to="images/promociones/call2action/", default=None)

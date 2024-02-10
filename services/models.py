@@ -7,9 +7,20 @@ from ckeditor.fields import RichTextField
 from calltoaction.models import CallToAction as Call2Action
 from django.core.exceptions import ValidationError    
 
+
+message = """"Hola, me gustaría recibir más información sobre los *Tratamientos de Dental Experience*.
+Enviado desde flebiland webapp https://dentalexperience.ingenios.com.ar
+
+Tratamiento: *...*
+_Distintivo: ..._
+https://dentalexperience.ingenios.com.ar/services
+
+Muchas Gracias,"""
+
+
 class Page(models.Model):
     name = models.CharField(max_length=255, default="Servicios")
-    description = models.TextField(null=True, blank=True,  default="<p>Descripción de <span>Servicios...</span></p>")
+    description = models.TextField(null=True, blank=True, default="<p>Descripción de <span>Servicios...</span></p>")
     is_enabled = models.BooleanField(default=True)
 
     def __str__(self):
@@ -41,7 +52,7 @@ class Post(models.Model):
     post_date = models.DateField(auto_now_add=True)
     snippet = models.CharField(max_length=255, null=True, blank=True)
     likes = models.ManyToManyField(User, related_name='services_post_likes') # change related_name to be unique
-    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True, related_name='articles')
+    category2 = models.ManyToManyField(Category, blank=True)
     tags = models.ManyToManyField(Tag, blank=True)
     sort_order = models.IntegerField(default=1)
     is_visible = models.BooleanField(default=True)

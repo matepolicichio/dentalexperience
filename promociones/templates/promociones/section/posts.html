@@ -1,8 +1,10 @@
 <section id="{{ section_selection.section.html_id }}" class="blog">
-    
-    <div class="container section-header" data-aos="fade-up">
+
+    <div class="container section-title" data-aos="fade-up">
         {% if promo_page_content %}
-        <a href="{% url 'promociones:home' %}"><h2>{{ promo_page_content.name }}</h2></a>
+        <a href="{% url 'promociones:home' %}">
+            <h2>{{ promo_page_content.name }}</h2>
+        </a>
         <p>{{ promo_page_content.description | safe }}</p>
         {% endif %}
     </div>
@@ -11,7 +13,7 @@
     <div class="container">
         <div class="d-flex justify-content-end align-items-center">
             <a href="{% url 'promociones:add_post' %}"><i class="bi bi-plus-square-fill" style="font-size: 2em"></i></a>
-        </div>    
+        </div>
     </div>
     {% endif %}
 
@@ -23,37 +25,57 @@
             <div class="col-xl-4 col-md-6">
                 <article class="article">
 
-                    <a href="{% url 'promociones:article-detail' post.pk %}" class="card-link"></a>
+                    <div class="sub-article">
+                        <a href="{% url 'promociones:article-detail' post.pk %}" class="card-link"></a>
 
-                    {% if post.header_image %}
-                    <div class="post-img">
-                        <a href="{% url 'promociones:article-detail' post.pk %}">
-                            <img src="{{ post.header_image.url }}" alt="..." class="img-fluid">
-                        </a>
-                    </div>
-                    {% endif %}          
-
-                    <div class="d-flex align-items-center justify-content-between">
-
-                        {% if post.category %}
-                        <p class="post-category">{{ post.category }}</p>
-                        {% endif %}
-
-                        {% if user.is_authenticated and user.is_staff %}
-                        <div>
-                            <small>
-                                <a href="{% url 'promociones:update_post' post.pk %}"><i class="bi bi-pencil"></i></a>
-                                <a href="{% url 'promociones:delete_post' post.pk %}"><i class="bi bi-trash"></i></a>
-                            </small>
+                        {% if post.header_image %}
+                        <div class="post-img">
+                            <a href="{% url 'promociones:article-detail' post.pk %}">
+                                <img src="{{ post.header_image.url }}" alt="..." class="img-fluid">
+                            </a>
                         </div>
                         {% endif %}
+
+                        <div class="d-flex align-items-center justify-content-between">
+
+                            {% if post.category %}
+                            <p class="post-category">{{ post.category }}</p>
+                            {% endif %}
+
+                            {% if user.is_authenticated and user.is_staff %}
+                            <div>
+                                <small>
+                                    <a href="{% url 'promociones:update_post' post.pk %}"><i
+                                            class="bi bi-pencil"></i></a>
+                                    <a href="{% url 'promociones:delete_post' post.pk %}"><i
+                                            class="bi bi-trash"></i></a>
+                                </small>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                        <h2 class="title">
+                            <a href="{% url 'promociones:article-detail' post.pk %}">{{ post.title }}</a>
+                        </h2>
+
+                        <p class="post-category">{{ post.snippet }}</p>
                     </div>
 
-                    <h2 class="title">
-                        <a href="{% url 'promociones:article-detail' post.pk %}">{{ post.title }}</a>
-                    </h2>
+                    <div class="meta-bottom">
+                        <i class="bi bi-folder"></i>
+                        <ul class="cats">
+                            {% for category in post.category2.all %}
+                            <li><a href="#">{{ category.name }}</a></li>
+                            {% endfor %}
+                        </ul>
 
-                    <p class="post-category">{{ post.snippet }}</p>
+                        <i class="bi bi-tags"></i>
+                        <ul class="tags">
+                            {% for tag in post.tags.all %}
+                            <li><a href="#">{{ tag.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div><!-- End meta bottom -->
 
                     {% comment %}
                     <div class="d-flex align-items-center justify-content-start">

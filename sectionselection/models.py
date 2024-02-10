@@ -10,10 +10,12 @@ class SectionEnabled(models.Model):
         ('base/section/stats.html', 'main - estadísticas'),
         ('base/section/team.html', 'main - equipo'),
         ('base/section/testimonials.html', 'main - testimonios'),
-        ('hero/section/hero.html', 'hero'),
-        ('calltoaction/section/call2action.html', 'calltoaction'),
-        ('promociones/section/posts.html', 'promociones - listado'),
-        ('services/section/posts.html', 'servicios - listado'),
+        ('hero/section/hero.html', 'section - hero'),
+        ('calltoaction/section/call2action.html', 'section - calltoaction'),
+        ('promociones/section/posts.html', 'section - promociones - listado'),
+        ('promociones/section/post_details.html', 'section - promociones - detalle'),
+        ('services/section/posts.html', 'section - servicios - listado'),
+        ('services/section/post_details.html', 'section - servicios - detalle'),
     ]
 
     name = models.CharField(max_length=255)
@@ -26,11 +28,11 @@ class SectionEnabled(models.Model):
 
 class PageEnabled(models.Model):
     TEMPLATE_CHOICES = [
-        ('base/index.html', 'base - mainpage'),
-        ('services/home.html', 'servicios - listado'),
-        ('services/article_details.html', 'servicios - detalle'),
-        ('promociones/home.html', 'promociones - listado'),
-        ('promociones/article_details.html', 'promociones - detalle'),
+        ('base/index.html', 'page - main'),
+        ('services/home.html', 'page - servicios - listado'),
+        ('services/article_details.html', 'page - servicios - detalle'),
+        ('promociones/home.html', 'page - promociones - listado'),
+        ('promociones/article_details.html', 'page - promociones - detalle'),
     ]
 
     name = models.CharField(max_length=255)

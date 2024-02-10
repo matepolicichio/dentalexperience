@@ -16,12 +16,10 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          {% if sections %}
-          {% for nav in sections %}
-          {% if nav.is_visible and nav.nav_enabled %}
-            {% if nav.page.template_path == 'base/index.html' %}
+          {% if nav_menu %}
+          {% for nav in nav_menu %}
+          {% if nav.nav_enabled %}
               <li><a href="{% url 'base:index' %}#{{ nav.section.html_id }}">{{ nav.section.name }}</a></li>            
-            {% endif %}
           {% endif %}
           {% endfor %}
           {% endif %}
@@ -35,8 +33,8 @@
       {% endif %}
 
       {% if header.is_whatsapp_enabled %}
-      <a href="https://api.whatsapp.com/send?phone={{ header.whats_number }}&text={{ header.whats_message }}"
-      class="btn-whatsapp" target="_blank">
+      <a href="https://api.whatsapp.com/send?phone={{ header.whats_number }}&text={{ header.whats_message|urlencode }}"
+      class="whatsapp btn-whatsapp" target="_blank">
         <i class="bi bi-whatsapp"></i>
       </a>
       {% endif %}
