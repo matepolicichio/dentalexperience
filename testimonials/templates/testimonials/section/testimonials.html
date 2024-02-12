@@ -1,6 +1,6 @@
 {% load static %}
 
-<section id="{{ section_selection.section.html_id }}" class="testimonials">
+<section id="{{ section_selection.section.html_id }}" class="blog-details">
 
     <div class="container">
 
@@ -38,6 +38,7 @@
                         <p>{{ testimonial.description }}</p>
                     </div>
                     {% endif %}
+                    <div class="indicator-space"></div>
                 </div>
             {% endfor %}
             </div>
@@ -53,5 +54,76 @@
         {% endif %}
   
     </div>
+
+    <style>
+        .blog-details {
+            padding: 30px 0px;
+        }
+
+        /* Custom CSS for styling */
+        .blog-details #carouselTestimonials {
+            overflow: hidden;
+            /* Hide overflow to prevent arrows from being cut off */
+        }
+
+        .blog-details .carousel-indicators {
+            bottom: 0px;
+            height: 30px;
+            padding: 10px;
+            /* Adjust top margin for positioning */
+            text-align: center;
+            /* Center the indicators */
+        }
+
+        .blog-details .indicator-space {
+            height: 40px;
+        }
+
+        .blog-details .carousel-indicators .button {
+            width: 10px;
+            /* Set indicator circle width */
+            height: 10px;
+            /* Set indicator circle height */
+            border-radius: 50%;
+            /* Make indicator circle a circle */
+            background-color: whitesmoke;
+            /* Set indicator circle color */
+            margin: 0 5px;
+            /* Adjust margin between indicators */
+            border: solid 1px gray;
+        }
+
+        .blog-details .carousel-indicators .active {
+            width: 12px;
+            /* Set active indicator circle width */
+            height: 12px;
+            /* Set active indicator circle height */
+            background-color: gray;
+            /* Set active indicator circle color */
+        }
+
+        .blog-details .carousel-control-prev,
+        .blog-details .carousel-control-next {
+            background-color: gray;
+            /* Set arrow background color to red */
+            width: 50px;
+            /* Set arrow width */
+            height: 50px;
+            /* Set arrow height */
+            top: 50%;
+            /* Position arrows vertically centered */
+            transform: translateY(-50%);
+            /* Adjust vertical positioning */
+            border-radius: 50%;
+        }
+
+        .blog-details .carousel-control-prev-icon,
+        .blog-details .carousel-control-next-icon {
+            border-radius: 50%;
+            /* Create a circular arrow icon */
+            background-color: gray;
+        }
+
+    </style>    
 
 </section>

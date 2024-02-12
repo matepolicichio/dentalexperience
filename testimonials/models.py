@@ -2,7 +2,7 @@ from django.db import models
 
 class Page(models.Model):
     name = models.CharField(max_length=255, default="Testimonios")
-    description = models.TextField(null=True, blank=True, default="<p>Descubre las experiencias reales de <span>nuestros pacientes</span></p>")
+    description = models.TextField(null=True, blank=True, default="Descubre las experiencias reales de nuestros pacientes")
     is_enabled = models.BooleanField(default=True)
 
     def __str__(self):
@@ -11,6 +11,7 @@ class Page(models.Model):
 class Testimonial(models.Model):
     title = models.CharField(max_length=100, default="Testimonio")
     description = models.TextField(null=True, blank=True, default="Descripción del testimonio")
+    show_caption = models.BooleanField(default=True)
     iframe_code = models.TextField(null=True, blank = True)
 
     def __str__(self):
