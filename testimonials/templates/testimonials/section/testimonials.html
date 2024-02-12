@@ -1,0 +1,57 @@
+{% load static %}
+
+<section id="{{ section_selection.section.html_id }}" class="testimonials">
+
+    <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+            {% if tstmnls_page_content %}
+            <a href="{% url 'testimonials:index' %}">
+                <h2>{{ tstmnls_page_content.name }}</h2>
+            </a>
+            <p>{{ tstmnls_page_content.description | safe }}</p>
+            {% endif %}
+        </div>
+
+        {% if testimonials %}
+        <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
+            
+            <div class="carousel-indicators">
+                {% for testimonial in testimonials %}
+                <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="{{ forloop.counter0 }}"
+                    class="button {% if forloop.first %}active{% endif %}"
+                    aria-current="{% if forloop.first %}true{% endif %}"
+                    aria-label="Slide {{ forloop.counter }}">
+                </button>
+                {% endfor %}
+            </div>
+            
+            <div class="carousel-inner">
+            {% for testimonial in testimonials %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <div class="embed-responsive embed-responsive-16by9 text-center">
+                        {{ testimonial.iframe_code|safe }}
+                    </div>
+                    {% if testimonial.show_caption %}
+                    <div class="carousel-caption">
+                        <h3>{{ testimonial.title }}</h3>
+                        <p>{{ testimonial.description }}</p>
+                    </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        {% endif %}
+  
+    </div>
+
+</section>

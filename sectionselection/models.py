@@ -9,9 +9,9 @@ class SectionEnabled(models.Model):
         ('base/section/portfolio.html', 'main - experiencia'),
         ('base/section/stats.html', 'main - estadísticas'),
         ('base/section/team.html', 'main - equipo'),
-        ('base/section/testimonials.html', 'main - testimonios'),
         ('hero/section/hero.html', 'section - hero'),
         ('calltoaction/section/call2action.html', 'section - calltoaction'),
+        ('testimonials/section/testimonials.html', 'section - testimonials'),
         ('promociones/section/posts.html', 'section - promociones - listado'),
         ('promociones/section/post_details.html', 'section - promociones - detalle'),
         ('services/section/posts.html', 'section - servicios - listado'),
@@ -29,6 +29,7 @@ class SectionEnabled(models.Model):
 class PageEnabled(models.Model):
     TEMPLATE_CHOICES = [
         ('base/index.html', 'page - main'),
+        ('testimonials/index.html', 'page - testimonios'),
         ('services/home.html', 'page - servicios - listado'),
         ('services/article_details.html', 'page - servicios - detalle'),
         ('promociones/home.html', 'page - promociones - listado'),

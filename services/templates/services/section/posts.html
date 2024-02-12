@@ -47,25 +47,50 @@
                             <h2 class="title">
                                 {{ post.title }}
                             </h2>
+
+                            {% if post.show_meta_top %}
+                            <div class="meta-top my-2">
+                                <ul class="justify-content-start">
+                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i>
+                                        {% if post.author.profile %}
+                                        <a href="{% url 'members:show_profile' post.author.profile.id %}">
+                                            {{ post.author.first_name }}
+                                            {{ post.author.last_name }}
+                                        </a>
+                                        {% else %}
+                                        {{ post.author.first_name }}
+                                        {{ post.author.last_name }}
+                                        {% endif %}
+                                    </li>
+        
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i>
+                                        <small>{{ post.post_date }}</small>
+                                    </li>
+                                </ul>
+                            </div>
+                            {% endif %}
+
                             <p class="description">{{ post.snippet }}</p>
                         </div>
                     </div>
 
+                    {% if post.show_meta_bottom %}
                     <div class="meta-bottom">
                         <i class="bi bi-folder"></i>
                         <ul class="cats">
                             {% for category in post.category2.all %}
-                            <li><a href="#">{{ category.name }}</a></li>
+                            <li>{{ category.name }}</li>
                             {% endfor %}
                         </ul>
 
                         <i class="bi bi-tags"></i>
                         <ul class="tags">
                             {% for tag in post.tags.all %}
-                            <li><a href="#">{{ tag.name }}</a></li>
+                            <li>{{ tag.name }}</li>
                             {% endfor %}
                         </ul>
-                    </div><!-- End meta bottom -->
+                    </div>
+                    {% endif %}
 
                 </div>
 

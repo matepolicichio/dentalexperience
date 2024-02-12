@@ -1,7 +1,7 @@
 <section id="{{ section_selection.section.html_id }}" class="blog-details">
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row">
+        <div class="row gy-5">
             <div class="col-lg-8">
                 <article class="article">
 
@@ -19,7 +19,7 @@
                     {% endif %}
 
                     {% if post.show_title %}
-                    <div class="row text-center">
+                    <div class="text-center">
                         <h2 class="title m-0 p-2">{{ post.title }}</h2>
                     </div>
                     {% endif %}
@@ -74,13 +74,13 @@
                             {% endif %}
                             {% endcomment %}
                         </ul>
-                    </div><!-- End meta top -->
+                    </div>
                     {% endif %}
 
                     {% if post.show_description %}
                     <div class="content">
                         {{ post.body | safe }}
-                    </div><!-- End post content -->
+                    </div>
                     {% endif %}
 
                     {% if postcards %}
@@ -192,15 +192,14 @@
                             <li>{{ tag.name }}</li>
                             {% endfor %}
                         </ul>
-                    </div><!-- End meta bottom -->
+                    </div>
                     {% endif %}
 
-                </article><!-- End post article -->
+                </article>
 
                 {% comment %}
                 {% if post.author.profile %}
                 <div class="blog-author d-flex align-items-center justify-content-start">
-
 
                     {% if post.author.profile.profile_pic %}
                     <a href="{% url 'members:show_profile' post.author.profile.id %}">
@@ -219,8 +218,7 @@
                         </a>
                         <div class="social-links">
                             {% if post.author.profile.website_url %}
-                            <a href="{{ post.author.profile.website_url }}" target="_blank"><i
-                                    class="bi bi-browser-chrome"></i></a>
+                            <a href="{{ post.author.profile.website_url }}" target="_blank"><i class="bi bi-browser-chrome"></i></a>
                             {% endif %}
                             {% if post.author.profile.facebook %}
                             <a href="{{ post.author.profile.facebook }}" target="_blank"><i class="bi bi-facebook"></i></a>
@@ -236,7 +234,7 @@
                             {{ post.author.profile.bio | slice:":100" | safe }}
                         </p>
                     </div>
-                </div><!-- End post author -->
+                </div>
                 {% endif %}
                 {% endcomment %}
 
@@ -263,7 +261,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div><!-- End comment #1 -->
+                    </div>
                     {% endfor %}
                     {% endif %}
 
@@ -296,10 +294,8 @@
                             </div>
 
                         </form>
-
                     </div>
-
-                </div><!-- End blog comments -->
+                </div>
                 {% endcomment %}
 
             </div>
@@ -330,12 +326,12 @@
                                 <h4><a href="{% url 'promociones:article-detail' recent_post.pk %}">{{ recent_post.title }}</a></h4>
                                 <p class="post-date">{{ recent_post.post_date }}</p>
                             </div>
-                        </div><!-- End recent post item-->
+                        </div>
 
                         {% endfor %}
                         {% endif %}
 
-                    </div><!-- End sidebar recent posts-->
+                    </div>
 
                     {% comment %}
                     <div class="sidebar-item search-form">
@@ -344,7 +340,7 @@
                             <input type="text">
                             <button type="submit"><i class="bi bi-search"></i></button>
                         </form>
-                    </div><!-- End sidebar search formn-->
+                    </div>
 
                     <div class="sidebar-item categories">
                         <h3 class="sidebar-title">Categorías</h3>
@@ -355,7 +351,7 @@
                             {% endif %}
                             {% endfor %}
                         </ul>
-                    </div><!-- End sidebar categories-->
+                    </div>
 
                     <div class="sidebar-item tags">
                         <h3 class="sidebar-title">Tags</h3>
@@ -364,10 +360,10 @@
                             <li><a href="#">{{ tag.name }}</a></li>
                             {% endfor %}
                         </ul>
-                    </div><!-- End sidebar tags-->
+                    </div>
                     {% endcomment %}
 
-                </div><!-- End Sidebar -->
+                </div>
 
             </div>
         </div>
@@ -466,4 +462,4 @@
         }
     </style>
 
-</section><!-- End Blog-details Section -->
+</section>

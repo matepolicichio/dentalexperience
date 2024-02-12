@@ -112,7 +112,6 @@ def ArticleDetailView(request, pk):
         ).order_by('sort_order')
 
     for postcard in postcards:
-        print(postcard.start_day)
         if postcard.start_day <= today.day <= postcard.end_day:
             postcard.expiration_days = min(last_day_of_this_month.day, postcard.end_day) - today.day
         else:
