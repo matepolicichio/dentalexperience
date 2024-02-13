@@ -1,11 +1,11 @@
 <section id="{{ section_selection.section.html_id }}" class="blog">
 
-    <div class="container section-title" data-aos="fade-up">
+    <div class="container section-header" data-aos="fade-up">
         {% if service_page_content %}
         <a href="{% url 'services:home' %}">
             <h2>{{ service_page_content.name }}</h2>
         </a>
-        <p>{{ service_page_content.description | safe }}</p>
+        <p class="font-default">{{ service_page_content.description }}</p>
         {% endif %}
     </div>
 

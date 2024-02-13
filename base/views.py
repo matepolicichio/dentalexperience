@@ -3,12 +3,12 @@ from .models import Header, Footer
 from .forms import ContactForm
 from promociones.models import Post as PromoPost
 from promociones.models import Page as PromoPage
-from sectionselection.models import SectionEnabled
 from hero.models import Hero
 from calltoaction.models import CallToAction
 from services.models import Post as ServicePost
 from services.models import Page as ServicePage
 from sectionselection.models import SectionSelection
+from testimonials.models import Testimonial, Page
 import random
 from random import choice
 
@@ -46,6 +46,12 @@ def index(request):
     if enabled_service_page_content.exists():
         service_page_random_content = random.choice(enabled_service_page_content)
 
+    testimonials = Testimonial.objects.filter(is_visible=True).order_by('sort_order')
+
+    enabled_tstmnls_page_content = Page.objects.filter(is_enabled=True)    
+    tstmnls_page_random_content = None
+    if enabled_tstmnls_page_content.exists():
+        tstmnls_page_random_content = random.choice(enabled_tstmnls_page_content)
 
     context = {
         'sections': sections,
@@ -57,7 +63,9 @@ def index(request):
         'service_posts': service_posts,
         'calltoaction': calltoaction,
         'promo_page_content': promo_page_random_content,
-        'service_page_content': service_page_random_content,     
+        'service_page_content': service_page_random_content,
+        'testimonials': testimonials,
+        'tstmnls_page_content': tstmnls_page_random_content,
     }
 
     template_name = 'base/index.html'

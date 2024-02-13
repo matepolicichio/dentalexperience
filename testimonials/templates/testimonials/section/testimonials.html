@@ -4,12 +4,12 @@
 
     <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
+        <div class="section-header" data-aos="fade-up">
             {% if tstmnls_page_content %}
             <a href="{% url 'testimonials:index' %}">
                 <h2>{{ tstmnls_page_content.name }}</h2>
             </a>
-            <p>{{ tstmnls_page_content.description | safe }}</p>
+            <p class="font-default">{{ tstmnls_page_content.description }}</p>
             {% endif %}
         </div>
 
