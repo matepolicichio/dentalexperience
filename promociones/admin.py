@@ -11,6 +11,7 @@ class PageAdmin(admin.ModelAdmin):
 
 admin.site.register(Page, PageAdmin)
 
+
 class PostAdmin(admin.ModelAdmin):
     list_display = ['title',
                     'show_title',

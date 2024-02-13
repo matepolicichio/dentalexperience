@@ -309,7 +309,7 @@
                         <a href="{% url 'services:home' %}">
                             <h3 class="sidebar-title">{{ service_page_content.name }}</h3>
                         </a>
-                        <p class="mt-3">{{ service_page_content.description }}</p>
+                        <p class="mt-3">{{ service_page_content.description|safe }}</p>
                         {% endif %}
 
                         {% if service_posts.all %}

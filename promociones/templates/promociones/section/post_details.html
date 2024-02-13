@@ -309,7 +309,7 @@
                         <a href="{% url 'promociones:home' %}">
                             <h3 class="sidebar-title">{{ promo_page_content.name }}</h3>
                         </a>
-                        <p class="mt-3">{{ promo_page_content.description }}</p>
+                        {{ promo_page_content.description | safe }}
                         {% endif %}
 
                         {% if promo_posts.all %}

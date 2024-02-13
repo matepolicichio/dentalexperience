@@ -21,7 +21,9 @@ Muchas Gracias,"""
 
 class Page(models.Model):
     name = models.CharField(max_length=255, default="Servicios")
-    description = models.TextField(null=True, blank=True, default="Descripción de Servicios...")
+    description = models.TextField(null=True, blank=True, 
+                                   default='<p>Esta es una <span>Descripción</span></p><p class="font-default">Este es un detalle ...</p>', 
+                                   help_text='utilizar código html para cambiar los estilos según el formato default')
     is_enabled = models.BooleanField(default=True)
 
     def __str__(self):

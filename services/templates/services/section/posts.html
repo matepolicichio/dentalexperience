@@ -5,7 +5,7 @@
         <a href="{% url 'services:home' %}">
             <h2>{{ service_page_content.name }}</h2>
         </a>
-        <p class="font-default">{{ service_page_content.description }}</p>
+        {{ service_page_content.description|safe }}
         {% endif %}
     </div>
 

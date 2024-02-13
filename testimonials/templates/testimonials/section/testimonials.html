@@ -9,7 +9,7 @@
             <a href="{% url 'testimonials:index' %}">
                 <h2>{{ tstmnls_page_content.name }}</h2>
             </a>
-            <p class="font-default">{{ tstmnls_page_content.description }}</p>
+            {{ tstmnls_page_content.description|safe }}
             {% endif %}
         </div>
 
