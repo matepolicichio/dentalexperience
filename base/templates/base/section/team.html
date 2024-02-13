@@ -1,8 +1,6 @@
 {% load static %}
-<!-- Team Section - Home Page -->
 
 <section id="{{ section_selection.section.html_id }}" class="team">
-  <!--  Section Title -->
 
   <div class="container">
 
@@ -18,7 +16,7 @@
 
     <div id="carouselTeam" class="carousel carousel-dark slide" data-bs-ride="carousel" data-aos="fade-up">
 
-      <div class="carousel-indicators mt-3">
+      <div class="carousel-indicators align-items-center mt-3">
         <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="0" class="active" aria-current="true"
           aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselTeam" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -37,16 +35,20 @@
               <img src="{% static 'base/img/equipo/equipo2.jpg' %}" class="img-fluid rounded-circle" alt="...">
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Dra. Ivonne Díaz</h5>
-              <p>Esp. Ortodoncia Gnatológica y Ortopedia Maxilar</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Dra. Ivonne Díaz</h5>
+                <p>Esp. Ortodoncia Gnatológica y Ortopedia Maxilar</p>
+              </div>
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Dr. Diego Romero</h5>
-              <p>Esp. Periodoncia e Implantología</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Dr. Diego Romero</h5>
+                <p>Esp. Periodoncia e Implantología</p>
+              </div>
             </div>
-
+            <div class="indicator-space"></div>
           </div>
         </div>
 
@@ -59,16 +61,20 @@
               <img src="{% static 'base/img/equipo/equipo4.jpg' %}" class="img-fluid rounded-circle" alt="...">
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Dra. María del Mar Ocharán</h5>
-              <p>Esp. Endodoncia</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Dra. María del Mar Ocharán</h5>
+                <p>Esp. Endodoncia</p>
+              </div>
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Dra. Anali Mora Pérez</h5>
-              <p>Esp. Odontopediatría</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Dra. Anali Mora Pérez</h5>
+                <p>Esp. Odontopediatría</p>
+              </div>
             </div>
-
+            <div class="indicator-space"></div>
           </div>
         </div>
 
@@ -82,16 +88,20 @@
               <img src="{% static 'base/img/equipo/equipo6.jpg' %}" class="img-fluid rounded-circle" alt="...">
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Dr. Abraham Oliva</h5>
-              <p>Esp Cirugía Maxilofacial</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Dr. Abraham Oliva</h5>
+                <p>Esp Cirugía Maxilofacial</p>
+              </div>
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Isabella Chiriboga</h5>
-              <p>Auxiliar Dental</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Isabella Chiriboga</h5>
+                <p>Auxiliar Dental</p>
+              </div>
             </div>
-
+            <div class="indicator-space"></div>
           </div>
         </div>
 
@@ -104,16 +114,20 @@
               <img src="{% static 'base/img/equipo/equipo8.jpg' %}" class="img-fluid rounded-circle" alt="...">
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Bárbara Uribe</h5>
-              <p>Auxiliar Dental</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Bárbara Uribe</h5>
+                <p>Auxiliar Dental</p>
+              </div>
             </div>
 
-            <div class="col-6 text-center">
-              <h5>Laura Aguirre</h5>
-              <p>Recepcionista</p>
+            <div class="col-6 d-flex justify-content-center align-items-center legend">
+              <div class="text-center">
+                <h5>Laura Aguirre</h5>
+                <p>Recepcionista</p>
+              </div>
             </div>
-
+            <div class="indicator-space"></div>
           </div>
         </div>
 
@@ -132,7 +146,78 @@
   
   </div>
 
+  <style>
+    .team {
+        padding: 30px 0px;
+    }
+
+    .team .legend {
+      min-height: 100px;
+    }
+    /* Custom CSS for styling */
+    .team #carouselTestimonials {
+        overflow: hidden;
+        /* Hide overflow to prevent arrows from being cut off */
+    }
+
+    .team .carousel-indicators {
+        bottom: 0px;
+        height: 30px;
+        padding: 10px;
+        /* Adjust top margin for positioning */
+        text-align: center;
+        /* Center the indicators */
+    }
+
+    .team .indicator-space {
+        height: 40px;
+    }
+
+    .team .carousel-indicators button {
+        width: 10px;
+        /* Set indicator circle width */
+        height: 10px;
+        /* Set indicator circle height */
+        border-radius: 50%;
+        /* Make indicator circle a circle */
+        background-color: whitesmoke;
+        /* Set indicator circle color */
+        margin: 0 5px;
+        /* Adjust margin between indicators */
+        border: solid 1px gray;
+    }
+
+    .team .carousel-indicators .active {
+        width: 12px;
+        /* Set active indicator circle width */
+        height: 12px;
+        /* Set active indicator circle height */
+        background-color: black;
+        /* Set active indicator circle color */
+    }
+
+    .team .carousel-control-prev,
+    .team .carousel-control-next {
+        background-color: gray;
+        /* Set arrow background color to red */
+        width: 50px;
+        /* Set arrow width */
+        height: 50px;
+        /* Set arrow height */
+        top: 50%;
+        /* Position arrows vertically centered */
+        transform: translateY(-50%);
+        /* Adjust vertical positioning */
+        border-radius: 50%;
+    }
+
+    .team .carousel-control-prev-icon,
+    .team .carousel-control-next-icon {
+        border-radius: 50%;
+        /* Create a circular arrow icon */
+        background-color: gray;
+    }
+
+</style>
+
 </section>
-
-
-<!-- End Team Section -->

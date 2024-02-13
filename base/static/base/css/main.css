@@ -1227,7 +1227,7 @@ section {
 .about .icon-box {
   padding: 40px 40px;
   box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
-  border-radius: 0%;
+  border-radius: 10px;
   background-color: var(--color-box-background);
   transition: all 0.3s ease-out 0s;
 }

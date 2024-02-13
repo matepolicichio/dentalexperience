@@ -16,7 +16,7 @@
         {% if testimonials %}
         <div id="carouselTestimonials" class="carousel slide" data-ride="carousel">
             
-            <div class="carousel-indicators">
+            <div class="carousel-indicators align-items-center">
                 {% for testimonial in testimonials %}
                 <button type="button" data-bs-target="#carouselTestimonials" data-bs-slide-to="{{ forloop.counter0 }}"
                     class="button {% if forloop.first %}active{% endif %}"

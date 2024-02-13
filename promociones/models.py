@@ -20,7 +20,7 @@ Muchas Gracias,"""
 
 class Page(models.Model):
     name = models.CharField(max_length=255, default="Promociones")
-    description = models.TextField(null=True, blank=True, default="Descripción de Promociones ...</p>")
+    description = models.TextField(null=True, blank=True, default="Descripción de Promociones ...")
     is_enabled = models.BooleanField(default=True)
 
     def __str__(self):

@@ -21,7 +21,7 @@ Muchas Gracias,"""
 
 class Page(models.Model):
     name = models.CharField(max_length=255, default="Servicios")
-    description = models.TextField(null=True, blank=True, default="Descripción de Servicios...</p>")
+    description = models.TextField(null=True, blank=True, default="Descripción de Servicios...")
     is_enabled = models.BooleanField(default=True)
 
     def __str__(self):
