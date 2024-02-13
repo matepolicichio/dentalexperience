@@ -43,7 +43,7 @@ class Hero(models.Model):
         validators=[validate_numeric_whatsapp_number],
         default="529984899792"
         )
-    whatsapp_message = models.TextField(null=True, blank=True, default=message)
+    whats_message = models.TextField(null=True, blank=True, default=message)
     whats_btn_text = models.CharField(max_length=255, default="Contáctanos")
     is_enabled = models.BooleanField(default=True)
  

@@ -19,8 +19,8 @@
         <div class="text-center">
           <h3>{{ calltoaction.title }}</h3>
           <p>{{ calltoaction.description }}</p>
-            <a href="https://api.whatsapp.com/send?phone={{ calltoaction.whatsapp_number }}&text={{ calltoaction.whatsapp_message|urlencode }}"
-              class="whatsapp cta-btn" target="_blank"><i class="bi bi-whatsapp"></i> {{ calltoaction.btn_text }}</a>
+            <a href="https://api.whatsapp.com/send?phone={{ calltoaction.whats_number }}&text={{ calltoaction.whats_message|urlencode }}"
+              class="whatsapp cta-btn" target="_blank"><i class="bi bi-whatsapp"></i> {{ calltoaction.whats_btn_text }}</a>
         </div>
       </div>
     </div>
